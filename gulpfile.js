@@ -159,7 +159,7 @@ function parsePath(file) {
         itemName = file.substr(file.lastIndexOf("\\"), file.length),
         dest = filePath;
 
-    dest = dest.substr(dest.indexOf("\\") + 1, dest.length);
+    // dest = dest.substr(dest.indexOf("\\") + 1, dest.length);
     dest = dest.replace(itemName, "");
 
     return dest;

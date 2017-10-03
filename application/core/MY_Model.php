@@ -10,7 +10,7 @@ class MY_Model extends CI_Model
     protected $primary_key = 'id';
     protected $selected;
     protected $error = array();
-    
+
 
     public function __construct()
     {
@@ -27,7 +27,7 @@ class MY_Model extends CI_Model
     {
         if ($fields !== NULL)
         {
-            $this->db->select($field);
+            $this->db->select($fields);
         }
 
         if ($where !== NULL)
@@ -37,7 +37,7 @@ class MY_Model extends CI_Model
 
         if ($limit !== NULL)
         {
-            $this->db->limit($limit);
+            $this->db->limit($limit[1], $limit[0]);
         }
 
         if ($order_by !== NULL)
@@ -49,10 +49,23 @@ class MY_Model extends CI_Model
     }
 
 
-    public function get($id)
+    public function get($id, $select=NULL)
     {
-        return $this->db->where($this->primary_key, $id)
-                        ->get($this->table_name)
+        if ($select !== NULL)
+        {
+            $this->db->select();
+        }
+
+        if (gettype($id) == 'array')
+        {
+            $this->db->where($id);
+        }
+        else
+        {
+            $this->db->where($this->primary_key, $id);
+        }
+
+        return $this->db->get($this->table_name)
                         ->result_object();
     }
 
@@ -85,10 +98,10 @@ class MY_Model extends CI_Model
 
     /**
      * Wrapper for $this->db->like()
-     * 
+     *
      * @param $column   Specified column you want to search
      * @param $pattern  Matching value pattern you want to search
-     * 
+     *
      * @return object
      */
     public function search($column, $pattern=NULL)
@@ -114,6 +127,14 @@ class MY_Model extends CI_Model
     }
 
 
+    public function join($table_name, $join_condition)
+    {
+        $this->db->join($table_name, $join_condition);
+        
+        return $this;
+    }
+
+
     /**
      * -------------------------------------------------------------------
      * UTILITY FUNCTIONS
@@ -122,7 +143,7 @@ class MY_Model extends CI_Model
 
     /**
      * Get the database errors
-     * 
+     *
      * @param $return_type  Variable type you want to returned
      * @param $index        Error index
      */
@@ -147,7 +168,7 @@ class MY_Model extends CI_Model
 
     /**
      * Set database error
-     * 
+     *
      * @param $error_message    Error message to display
      * @param #error_code       Error code to specify the error type
      */

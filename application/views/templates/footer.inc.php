@@ -1,3 +1,9 @@
+<?php ! defined('FOOTER_INCLUDED') OR die('You can\'t include this file twice!');
+
+define('FOOTER_INCLUDED', TRUE);
+?>
+ 
+ 
         </main>
 
         <?php
@@ -27,7 +33,12 @@
             });
         </script>
 
+        <script src="<?php echo base_url() ?>res/js/react.min.js"></script>
+        <script src="<?php echo base_url() ?>res/js/react-dom.min.js"></script>
+
         <script src="<?php echo base_url() ?>res/anderlyne/jquery-1.8.2.min.js"></script>
+        <script src="<?php echo base_url() ?>res/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+        <script src="<?php echo base_url() ?>res/timepicker-addon/timepicker.js"></script>
         <script src="<?php echo base_url() ?>res/anderlyne/anderlyne.js"></script>
         <script src="<?php echo base_url() ?>res/js/script.js"></script>
 

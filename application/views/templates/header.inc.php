@@ -1,3 +1,9 @@
+<?php ! defined('HEADER_INCLUDED') OR die('You can\'t include this file twice!');
+
+define('HEADER_INCLUDED', TRUE);
+?>
+
+
 <!DOCTYPE html>
 
 <html lang="en-US">
@@ -9,6 +15,9 @@
         <meta name="author" content="Prasna Lukito" />
         <meta name="description" content="Business app learning using PHP CodeIgniter and ReactJS" />
 
+
+        <link rel="stylesheet" href="<?php echo base_url() ?>res/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>res/timepicker-addon/timepicker.css">
         <link rel="stylesheet" href="<?php echo base_url() ?>res/anderlyne/anderlyne.css">
         <link rel="stylesheet" href="<?php echo base_url() ?>res/css/style.css">
 
