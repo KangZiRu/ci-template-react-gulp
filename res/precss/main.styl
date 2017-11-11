@@ -1,0 +1,183 @@
+@import 'global/variables'
+
+
+body
+  background #F2F2F2
+
+
+main
+  padding-top 50px
+  width 100vw
+  height calc(100vh)
+
+  button, input[type="submit"], a.button
+    background mat-blue-700
+    border none
+    padding 10px 20px
+    font-size 14px
+    font-weight 400
+    font-family Roboto
+    cursor pointer
+    box-shadow none
+    box-sizing border-box
+    outline none
+    &:not(.secondary, .error):hover
+      background mat-blue-500
+
+
+
+  input[type="text"],
+  input[type="password"],
+  input[type="number"],
+  input[type="email"],
+  input[type="datetime"]
+  textarea
+    background inherit
+    color inherit
+    border none
+    border-bottom 1px solid #AAA
+    padding-left 0
+    font-size 16px
+    padding-top 8px
+    padding-bottom 8px
+    font-family Roboto
+    outline none
+    &:focus
+      border-bottom-color #66F
+  
+
+  form
+    .--input
+      margin-top 35px
+
+      span
+        top -13px
+        opacity .8
+        transition all .2s ease-in-out
+            
+      select
+        border none
+        border-bottom 1px solid #AAA
+        padding-top 8px !important
+        padding-bottom 8px !important
+        outline none
+        opacity 1
+        padding-left 0
+        font-size 16px
+        font-family Roboto
+        &[disabled]
+          opacity .6
+          
+      .search-bar
+        position relative
+        height 35px
+        border-bottom 1px solid #CCC
+        > input
+          position absolute
+          top 0
+          left 0
+          z-index 10
+          width calc(100% - 30px)
+          border none
+          border-right 1px solid #CCC
+        > select
+          position absolute
+          left 0
+          top 0
+          width 100%
+          border none
+          background white
+          opacity 0
+          z-index 9
+        &:after
+          content ''
+          width 0
+          height 0
+          border 4px solid transparent
+          border-left-color #CCC
+          border-top-color #CCC
+          position absolute
+          right 10px
+          top 50%
+          z-index 8
+          transform translateY(-75%) rotate(-135deg)
+        
+
+  .--submit
+    margin-top 30px
+    &.right
+      text-align right
+      
+
+  .table-section 
+    >
+      .title
+        border-bottom none
+        > h3
+          left 20px
+      .header
+        height 40px
+        padding-bottom 10px
+        > *
+          margin-left 20px
+          
+    table
+      >
+        thead
+          border-bottom none
+          th
+            text-align left
+        tbody
+          > tr
+            &:nth-child(even)
+              background white
+            &:first-child
+              border-top none
+            > td
+              img
+                display block
+                
+
+
+
+
+#anderlyne-notif-bar
+  background #FFF
+  border 1px solid mat-blue-500
+  > 
+    h3, p, span
+      color #555
+    h3
+      margin-bottom 10px
+      
+ul[data-dropdown]
+  color #444
+  z-index 10000
+  margin 0
+  box-shadow none
+  box-sizing border-box
+  > li
+    cursor pointer
+    
+
+div[data-modal]
+  > .content
+    >
+      .header
+        background mat-blue-700
+        > h3
+          color white
+          padding-left 20px
+        > [data-modal-close]
+          padding-right 20px
+          font-size 24px
+      .body
+        padding 30px 20px
+        > p
+          margin-top 0
+        input[type='radio']
+          display inline
+  &[id*='-del']
+    > .content
+      > .body
+        padding-bottom 0

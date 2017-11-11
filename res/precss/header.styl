@@ -1,0 +1,56 @@
+@import 'global/variables'
+
+
+header
+  background #FAFAFA
+  height 50px
+  color #444
+  position fixed
+  width 100vw
+  box-sizing border-box
+  top 0
+  display flex
+  align-items center
+  padding 0 20px
+  padding-right 0
+  color #444
+  z-index 20
+  border-bottom 1px solid #CCC
+  overflow hidden
+  -webkit-touch-callout none /* iOS Safari */
+  -webkit-user-select none /* Safari */
+  -khtml-user-select none /* Konqueror HTML */
+  -moz-user-select none /* Firefox */
+  -ms-user-select none /* Internet Explorer/Edge */
+  user-select none /* Non-prefixed version, currently
+                      supported by Chrome and Opera */
+  >
+    #main-logo
+      font-size 28px
+      font-weight 600
+
+    #main-nav
+      position absolute
+      left 20vw
+      > li
+        padding 0
+        
+    #profile-nav
+      margin-left auto
+      
+      > li
+        padding 0
+        padding-right 10px
+
+        #main-profile-section
+          padding-right 10px
+          display flex
+          align-items center
+          height 100%
+          img
+            display block
+            vertical-align middle
+            margin-right 10px
+          span
+            vertical-align middle
+        
