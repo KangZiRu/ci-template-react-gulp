@@ -135,6 +135,16 @@ class MY_Model extends CI_Model
     }
 
 
+    public function count()
+    {
+        $data = $this->db->select('COUNT('.$this->primary_key.') as count')
+                         ->get($this->table_name)
+                         ->result_object();
+
+        return int($data->count);
+    }
+
+
     /**
      * -------------------------------------------------------------------
      * UTILITY FUNCTIONS
