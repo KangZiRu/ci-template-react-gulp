@@ -24,8 +24,7 @@ class MY_Controller extends CI_Controller
 
         $data['header'] = $this->header;
         $data['footer'] = $this->footer;
-        // $data['template_location'] = $this->template_location;
-        // $data['templates'] = $this->another_templates;
+
         $data['css'] = $this->css;
         $data['js'] = $this->js;
 
@@ -43,9 +42,11 @@ class MY_Controller extends CI_Controller
         }
 
         $data['title'] =
-             $this->config->item('title_prefix', 'app_settings')
+             $this->config->item('title_prefix')
                 .$data['title']
-                .$this->config->item('title_suffix', 'app_settings');
+                .$this->config->item('title_suffix');
+
+        $data['version_query'] = '?v='.$this->config->item('app_version');
 
         $data['template'] = $this->another_templates;
         $data['template_location'] = $this->template_location;

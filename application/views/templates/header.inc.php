@@ -19,11 +19,13 @@ define('HEADER_INCLUDED', TRUE);
         <link rel="stylesheet" href="<?php echo base_url() ?>res/jquery-ui-1.12.1.custom/jquery-ui.min.css">
         <link rel="stylesheet" href="<?php echo base_url() ?>res/timepicker-addon/timepicker.css">
         <link rel="stylesheet" href="<?php echo base_url() ?>res/anderlyne/anderlyne.css">
-        <link rel="stylesheet" href="<?php echo base_url() ?>res/css/style.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>res/css/header.css<?php echo $version_query ?>">
+        <link rel="stylesheet" href="<?php echo base_url() ?>res/css/main.css<?php echo $version_query ?>">
+        <link rel="stylesheet" href="<?php echo base_url() ?>res/css/footer.css<?php echo $version_query ?>">
 
         <?php if (count($css) > 0): ?>
             <?php foreach ($css as $css_file): ?>
-                <link rel="stylesheet" href="<?php echo base_url() ?>res/css/<?php echo $css_file ?>.css">
+                <link rel="stylesheet" href="<?php echo base_url().'res/css/'.$css_file.'.css'.$version_query ?>">
             <?php endforeach; ?>
         <?php endif; ?>
     </head>

@@ -22,6 +22,7 @@ define('FOOTER_INCLUDED', TRUE);
         }
         ?>
         
+        <?php if (ENVIRONMENT === 'production') ?>
         <script src="http://localhost:35729/livereload.js?snipver=1"></script>
 
         <script>
@@ -41,11 +42,11 @@ define('FOOTER_INCLUDED', TRUE);
         <script src="<?php echo base_url() ?>res/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
         <script src="<?php echo base_url() ?>res/timepicker-addon/timepicker.js"></script>
         <script src="<?php echo base_url() ?>res/anderlyne/anderlyne.js"></script>
-        <script src="<?php echo base_url() ?>res/js/script.js"></script>
+        <script src="<?php echo base_url().'res/js/script.js'.$version_query ?>"></script>
 
         <?php if (count($js) > 0): ?>
             <?php foreach($js as $js_file): ?>
-                <script src="<?php echo base_url() ?>res/js/<?php echo $js_file ?>.js"></script>
+                <script src="<?php echo base_url().'res/js/'.$js_file.'.js'.$version_query ?>"></script>
             <?php endforeach; ?>
         <?php endif; ?>
     </body>
