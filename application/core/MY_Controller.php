@@ -40,8 +40,12 @@ class MY_Controller extends CI_Controller
                 $data['title'] = $this->page_title;
             }
 
-            $data['title'] = $this->config->item('title_prefix') . $data['title'];
         }
+
+        $data['title'] =
+             $this->config->item('title_prefix', 'app_settings')
+                .$data['title']
+                .$this->config->item('title_suffix', 'app_settings');
 
         $data['template'] = $this->another_templates;
         $data['template_location'] = $this->template_location;
