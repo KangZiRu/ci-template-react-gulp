@@ -11,21 +11,7 @@ class Home extends MY_Controller
 
     public function index()
     {
-        is_logged_in() OR redirect('login');
-
-        if ($this->session->level == 9)
-        {
-            $this->load_react(array ('employee', 'schedule', 'calendar'));
-        }
-        else
-        {
-            $this->load_react('patient');
-            $this->load_react('medical-record');
-        }
-
-        $this->load_js(array ('index'))
-             ->load_css('index')
-             ->load_view('index');
+        $this->load_view('index');
     }
 
 
